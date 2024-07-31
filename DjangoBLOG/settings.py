@@ -64,6 +64,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+             "libraries": {                                          # 加入這幾行
+                "markdown_tag": "libraries.filter.markdown_filter", # 加入這幾行
+            }                                                       # 加入這幾行
         },
     },
 ]
@@ -128,3 +131,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+## Secure cross policy
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None

@@ -1,11 +1,13 @@
-{% extends "scaffolds/base.html" %}
-
+{% extends 'scaffolds/base.html' %}
+{% block title %} Django CMS {% endblock %}
 
 {% block content %}
-    <h1 style="color: purple"> 繼承模板 </h1>
+{% include 'components/page.header.html' with post=post showReadMore=True%}
+<div class="app-content">
     {% for post in posts %}
-        <a href="post/{{post.slug}}"> #{{forloop.counter}}: {{ post.title }} </a>
-        <br>
-        <br>
+        {% include "components/article.card.html" with post=post showReadMore=True %}
     {% endfor %}
+</div> 
 {% endblock %}
+
+{% block js_script %}{% endblock %}

@@ -38,7 +38,7 @@ def showpost(requests, slug):
     except MultipleObjectsReturned:
         post = Post.objects.filter(slug = slug).first
    
-    return render(requests, 'post.html' , locals())
+    return render(requests, 'pages/post.html' , locals())
 
 
 
